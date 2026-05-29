@@ -53,7 +53,7 @@
 }
 
 .table thead tr {
-  background: #1A1730;  /* dark header — Civqa style */
+  background: var(--petrol);
   position: sticky;
   top: 0;
   z-index: 5;
@@ -152,6 +152,6 @@
   display: flex; align-items: center; justify-content: center;
   transition: all 0.1s;
 }
-.pageBtn:hover:not(:disabled) { background: var(--violet-light); color: var(--violet); border-color: var(--violet-border); }
+.pageBtn:hover:not(:disabled) { background: var(--petrol-lighter); color: var(--petrol); border-color: var(--petrol-light); }
 .pageBtn:disabled { opacity: 0.35; cursor: default; }
-.pageBtnActive { background: var(--violet) !important; color: white !important; border-color: var(--violet) !important; font-weight: 700; }
+.pageBtnActive { background: var(--petrol) !important; color: white !important; border-color: var(--petrol) !important; font-weight: 700; }

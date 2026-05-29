@@ -1,11 +1,60 @@
+/* Interreg CE — global bottom bar */
+
 .footer {
+  width: 100%;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 6px;
-  padding: 16px 0 28px;
-  border-top: 1px solid var(--border);
+  gap: 12px;
+  padding: 12px 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dashName {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  font-family: var(--font-head);
+  white-space: nowrap;
+}
+
+.sep {
+  color: var(--petrol-light);
+  font-size: 12px;
+}
+
+.poweredBy {
   font-size: 11px;
   color: var(--text-3);
-  margin-top: 8px;
+  white-space: nowrap;
+}
+
+.oeLogo {
+  height: 18px;
+  width: auto;
+  display: block;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.oeLogo:hover { opacity: 1; }
+
+.legal {
+  font-size: 11px;
+  color: var(--text-3);
+  white-space: nowrap;
 }

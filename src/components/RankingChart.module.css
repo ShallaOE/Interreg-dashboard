@@ -6,6 +6,45 @@
   box-shadow: var(--shadow-s);
 }
 
+.toolbar {
+  margin-bottom: 12px;
+}
+
+/* Country legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: var(--r-s);
+  transition: background 0.1s;
+  font-family: var(--font);
+}
+.legendItem:hover { background: var(--petrol-lighter); }
+
+.legendHidden { opacity: 0.4; }
+.legendHidden .legendLabel { text-decoration: line-through; }
+
+.legendLabel {
+  font-size: 11px;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
 .chart {
   position: relative;
   display: flex;

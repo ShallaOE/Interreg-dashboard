@@ -1,56 +1,94 @@
 /* ══════════════════════════════════════════════════════════
-   OE Design System 2.0 — Civqa/Data Room reference tokens
+   Interreg CENTRAL EUROPE — Design Tokens
+   Source: Interreg CE Programme Brand Book v3 (04/2024)
    ══════════════════════════════════════════════════════════ */
 
 :root {
-  --font:         'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', sans-serif;
-  --font-mono:    'Atkinson Hyperlegible Mono', monospace;
+  /* ── Typography ──────────────────────────────────────────── */
+  --font:      'Open Sans', 'Trebuchet MS', Arial, sans-serif;
+  --font-head: 'Montserrat', 'Trebuchet MS', Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
 
-  /* Brand violet */
-  --violet:        #5B4FCF;
-  --violet-dark:   #3D2B8E;
-  --violet-mid:    #7B6FE8;
-  --violet-light:  #EEF0FD;
-  --violet-border: #C5BFEE;
+  /* ── Interreg Brand Colours ──────────────────────────────── */
+  /* Reflex Blue — logo + primary CTA */
+  --interreg-blue:       #0d428d;
+  --interreg-blue-light: #e8f0f8;
+  --interreg-blue-mid:   #1a5ba8;
 
-  /* Surfaces */
-  --bg:          #F5F4F0;
-  --surface:     #FFFFFF;
-  --surface-2:   #FAFAF8;
+  /* Petrol (Primary Programme Colour) */
+  --petrol:        #6c8793;
+  --petrol-dark:   #4c6470;   /* darkened for sidebar */
+  --petrol-bright: #84aab0;
+  --petrol-light:  #c3d3d7;
+  --petrol-lighter:#edf3f5;
 
-  /* Text */
-  --text:        #111110;
-  --text-2:      rgba(17,17,16,0.55);
-  --text-3:      rgba(17,17,16,0.35);
+  /* Grey Shades (Secondary) */
+  --grey-dark:   #4c4c4e;
+  --grey:        #7a7b7d;
+  --grey-light:  #a5a6a8;
+  --grey-lighter:#e8e8e9;
 
-  /* Borders */
-  --border:      rgba(17,17,16,0.08);
-  --border-md:   rgba(17,17,16,0.15);
+  /* ── Priority Colours ────────────────────────────────────── */
+  --priority-smarter:    #18BAA8;  /* A Smarter Central Europe  */
+  --priority-greener:    #9ACA3C;  /* A Greener Central Europe  */
+  --priority-connected:  #F68A42;  /* A More Connected CE       */
+  --priority-governance: #0E6EB6;  /* A Better Interreg Gov.    */
 
-  /* Status */
-  --green:    #15803D; --green-bg:  #DCFCE7;
-  --red:      #B91C1C; --red-bg:    #FEE2E2;
-  --amber:    #B45309; --amber-bg:  #FEF3C7;
+  /* ── Surfaces & Backgrounds ─────────────────────────────── */
+  --bg:        #f2f6f7;   /* very light petrol tint */
+  --surface:   #ffffff;
+  --surface-2: #f8fafb;
 
-  /* Shadows from ds-tokens */
-  --shadow-s: 0px 4px  4px  0px rgba(0,0,0,0.10);
-  --shadow-m: 0px 8px  16px 0px rgba(0,0,0,0.12);
-  --shadow-l: 0px 16px 48px 0px rgba(0,0,0,0.15);
+  /* ── Sidebar ─────────────────────────────────────────────── */
+  --sidebar-bg:      #1a2e38;   /* deep petrol-dark */
+  --sidebar-text:    rgba(255,255,255,0.82);
+  --sidebar-text-2:  rgba(255,255,255,0.45);
+  --sidebar-active:  rgba(255,255,255,0.13);
+  --sidebar-hover:   rgba(255,255,255,0.07);
+  --sidebar-divider: rgba(255,255,255,0.09);
 
-  /* Radii */
-  --r-s: 4px; --r-m: 8px; --r-l: 12px; --r-xl: 16px;
+  /* ── Text ────────────────────────────────────────────────── */
+  --text:   #1a2e38;
+  --text-2: #4c6470;
+  --text-3: #7a8f96;
 
-  /* Type scale from ds-tokens */
-  --size-h1: 32px; --size-h2: 28px; --size-h3: 24px;
-  --size-h4: 20px; --size-h5: 18px; --size-h6: 16px;
-  --size-body-l: 18px; --size-body-m: 16px; --size-body-s: 14px;
-  --size-caption: 12px;
+  /* ── Borders ─────────────────────────────────────────────── */
+  --border:    rgba(108,135,147,0.18);
+  --border-md: rgba(108,135,147,0.30);
 
-  /* Layout */
-  --sidebar-w:  220px;
-  --topnav-h:   52px;
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --shadow-s: 0 2px  6px  rgba(26,46,56,0.08);
+  --shadow-m: 0 4px  16px rgba(26,46,56,0.10);
+  --shadow-l: 0 8px  32px rgba(26,46,56,0.14);
+
+  /* ── Radii ───────────────────────────────────────────────── */
+  --r-s: 3px; --r-m: 6px; --r-l: 10px; --r-xl: 14px;
+
+  /* ── Type Scale ──────────────────────────────────────────── */
+  --size-h1: 30px; --size-h2: 24px; --size-h3: 20px;
+  --size-h4: 18px; --size-h5: 16px; --size-h6: 14px;
+  --size-body-l: 16px; --size-body-m: 15px; --size-body-s: 13px;
+  --size-caption: 11px;
+
+  /* ── Compat aliases (legacy components) ─────────────────── */
+  --violet:        var(--interreg-blue);
+  --violet-dark:   var(--sidebar-bg);
+  --violet-mid:    var(--interreg-blue-mid);
+  --violet-light:  var(--interreg-blue-light);
+  --violet-border: rgba(13,66,141,0.25);
+  --text-1:        var(--text);
+
+  /* ── Layout ──────────────────────────────────────────────── */
+  --sidebar-w: 240px;
+  --topnav-h:  54px;
+
+  /* ── Status ──────────────────────────────────────────────── */
+  --green:  #2d7a3a; --green-bg:  #e6f4ea;
+  --red:    #b91c1c; --red-bg:    #fde8e8;
+  --amber:  #b45309; --amber-bg:  #fef3c7;
 }
 
+/* ── Reset ───────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
@@ -58,46 +96,56 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-button { font-family: var(--font); cursor: pointer; border: none; background: none; }
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-head);
+  line-height: 1.25;
+}
+
+button  { font-family: var(--font); cursor: pointer; border: none; background: none; }
 input, select { font-family: var(--font); }
+a { color: var(--interreg-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--petrol-light); border-radius: 3px; }
 
-/* ── Utilities ── */
+/* ── Utilities ───────────────────────────────────────────────── */
 .section-header {
   padding-bottom: 10px;
-  border-bottom: 1.5px solid var(--violet);
+  border-bottom: 2px solid var(--petrol-light);
   margin-bottom: 20px;
 }
 .section-title {
+  font-family: var(--font-head);
   font-size: var(--size-h4);
   font-weight: 700;
   color: var(--text);
 }
 
 .btn-primary {
-  background: var(--violet); color: white;
+  background: var(--interreg-blue);
+  color: white;
   font-size: 13px; font-weight: 600;
   padding: 8px 18px; border-radius: var(--r-m);
   transition: background 0.15s;
 }
-.btn-primary:hover { background: var(--violet-mid); }
+.btn-primary:hover { background: var(--interreg-blue-mid); }
 
 .btn-outline {
-  background: transparent; color: var(--violet);
-  border: 1.5px solid var(--violet);
+  background: transparent;
+  color: var(--interreg-blue);
+  border: 1.5px solid var(--interreg-blue);
   font-size: 13px; font-weight: 600;
   padding: 7px 16px; border-radius: var(--r-m);
   transition: all 0.15s;
 }
-.btn-outline:hover { background: var(--violet-light); }
+.btn-outline:hover { background: var(--interreg-blue-light); }
 
 .card {
   background: var(--surface);
@@ -106,10 +154,8 @@ input, select { font-family: var(--font); }
   box-shadow: var(--shadow-s);
 }
 
-/* Tab pill group — Civqa "Grafico / Dati in tabella" pattern */
 .tab-group {
-  display: inline-flex;
-  gap: 2px;
+  display: inline-flex; gap: 2px;
   background: var(--bg);
   border: 1px solid var(--border-md);
   border-radius: var(--r-l);
@@ -118,8 +164,42 @@ input, select { font-family: var(--font); }
 .tab-pill {
   padding: 6px 16px; border-radius: var(--r-m);
   font-size: 13px; font-weight: 500;
-  color: var(--text-2); transition: all 0.15s;
-  cursor: pointer;
+  color: var(--text-2); transition: all 0.15s; cursor: pointer;
 }
-.tab-pill.active { background: var(--violet); color: white; font-weight: 600; }
-.tab-pill:not(.active):hover { background: var(--violet-light); color: var(--violet); }
+.tab-pill.active { background: var(--petrol); color: white; font-weight: 600; }
+.tab-pill:not(.active):hover { background: var(--petrol-lighter); color: var(--petrol); }
+
+/* ══════════════════════════════════════════════════════════
+   Dark Mode — Interreg CE petrol dark palette
+   ══════════════════════════════════════════════════════════ */
+[data-theme="dark"] {
+  --bg:        #0d1c24;
+  --surface:   #1a2e38;
+  --surface-2: #1f3644;
+
+  --text:   #e2eff3;
+  --text-2: #92b4bf;
+  --text-3: #537585;
+
+  --border:    rgba(132,170,176,0.12);
+  --border-md: rgba(132,170,176,0.22);
+
+  --interreg-blue:       #3d7cbf;
+  --interreg-blue-mid:   #5291d4;
+  --interreg-blue-light: rgba(61,124,191,0.18);
+
+  --petrol-lighter: #1f3644;
+  --petrol-light:   #3a5e6e;
+  --petrol-bright:  #84aab0;
+  --petrol:         #6c8793;
+
+  --grey-lighter: #1f3644;
+  --grey-light:   #3a5060;
+
+  --shadow-s: 0 2px  6px  rgba(0,0,0,0.30);
+  --shadow-m: 0 4px  16px rgba(0,0,0,0.40);
+  --shadow-l: 0 8px  32px rgba(0,0,0,0.50);
+
+  --sidebar-bg:      #111c24;
+  --sidebar-divider: rgba(255,255,255,0.07);
+}

@@ -84,9 +84,11 @@ export default function DataTable({ regions, years, selectedYear, euVal, focusRe
               <Th k="id"      label="Code"    />
               <Th k="name"    label="Region"  />
               <Th k="country" label="Country" />
-              <Th k={selectedYear} label={`${selectedYear} rate`} cls={styles.thNum}/>
+              <Th k={selectedYear} label={`Valore ${selectedYear}`} cls={styles.thNum}/>
               <Th k="yoy"     label="Δ yoy"   cls={styles.thNum}/>
-              {years.map(y => <Th key={y} k={y} label={y} cls={styles.thYear}/>)}
+              {[...years].reverse().filter(y => y !== selectedYear).map(y => (
+                <Th key={y} k={y} label={y} cls={styles.thYear}/>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -100,7 +102,7 @@ export default function DataTable({ regions, years, selectedYear, euVal, focusRe
                   <td><span className={styles.code}>{r.id}</span></td>
                   <td className={styles.tdName}>{r.name}</td>
                   <td><span className={styles.country}>{r.countryName}</span></td>
-                  <td className={styles.tdRate}>{r.rate!=null?r.rate.toFixed(1)+'%':'—'}</td>
+                  <td className={styles.tdRate}>{r.rate!=null?r.rate.toFixed(1):'—'}</td>
                   <td className={styles.tdYoy}>
                     {r.yoy!=null
                       ? <span className={r.yoy<0?styles.better:r.yoy>0?styles.worse:''}>
@@ -108,7 +110,7 @@ export default function DataTable({ regions, years, selectedYear, euVal, focusRe
                         </span>
                       : '—'}
                   </td>
-                  {years.map(y=>(
+                  {[...years].reverse().filter(y => y !== selectedYear).map(y=>(
                     <td key={y} className={styles.tdSeries}>
                       {r.series[y]!=null?r.series[y].toFixed(1):'—'}
                     </td>

@@ -1,20 +1,11 @@
-.grid {
-  display: grid;
-  grid-template-columns: 1.45fr 1fr;
-  gap: 20px;
-  align-items: start;
-}
-
-.mapCard, .trendCard {
-  overflow: hidden;
-}
+/* ── Map card ── */
+.mapCard { overflow: hidden; }
 
 .cardHead {
   padding: 16px 20px 12px;
   margin-bottom: 0;
 }
 
-/* FIXED height — no flex, no auto, no responsive */
 .mapBody {
   position: relative;
   background: #EDF2F7;
@@ -24,20 +15,14 @@
   display: block;
 }
 
-.trendBody {
-  padding: 4px 16px 16px;
-  height: 460px;
-  overflow: hidden;
-}
-
 .svg {
   display: block;
   position: absolute;
   top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
 }
 
+/* Tooltip */
 .tooltip {
   position: absolute;
   pointer-events: none;
@@ -46,51 +31,114 @@
   border-radius: var(--r-m);
   padding: 8px 12px;
   box-shadow: var(--shadow-m);
-  min-width: 130px;
+  min-width: 140px;
   z-index: 20;
 }
-.ttName { font-size: 12px; font-weight: 700; margin-bottom: 2px; }
-.ttCode { font-size: 10px; color: var(--text-2); font-family: var(--font-mono); margin-bottom: 4px; }
-.ttRate { font-size: 20px; font-weight: 700; color: var(--violet); font-family: var(--font-mono); }
+.ttName { font-size: 12px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+.ttCode { font-size: 10px; color: var(--text-3); font-family: var(--font-mono); margin-bottom: 4px; }
+.ttVal  { font-size: 20px; font-weight: 700; color: var(--interreg-blue); font-family: var(--font-mono); }
 
-.colorBar {
+/* Legend bar (right side of map) */
+.legendBar {
   position: absolute;
-  right: 12px;
+  right: 14px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
-.colorBarGrad {
-  width: 14px;
-  height: 120px;
+.legendGrad {
+  width: 14px; height: 120px;
   border-radius: 7px;
-  background: linear-gradient(to bottom, #B71C1C, #EF5350, #FFB74D, #FFF176, #81C784, #4CAF50);
-  border: 1px solid rgba(0,0,0,0.12);
+  background: linear-gradient(to bottom, #C62828, #EF5350, #FFB74D, #FFF176, #81C784, #4CAF50);
+  border: 1px solid rgba(0,0,0,0.10);
 }
-.colorBarMax, .colorBarMin {
+.legendMin, .legendMax {
   font-size: 10px; font-weight: 700;
   color: var(--text-2);
   font-family: var(--font-mono);
 }
 
-.trendNote {
-  font-size: 11px;
-  color: var(--text-3);
-  margin-bottom: 8px;
-  padding: 0 4px;
-}
-.focusBadge {
-  background: var(--violet-light);
-  color: var(--violet);
-  font-size: 11px; font-weight: 700;
-  padding: 1px 7px; border-radius: 10px;
-  font-family: var(--font-mono);
-  margin-right: 4px;
+/* ── Trend card ── */
+.trendCard { overflow: hidden; margin-top: 20px; }
+
+.trendHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 12px;
+  border-bottom: 1.5px solid var(--petrol-light);
+  margin-bottom: 0;
 }
 
-@media (max-width: 1100px) {
-  .grid { grid-template-columns: 1fr; }
+/* Countries / Regions toggle */
+.toggleGroup {
+  display: flex;
+  gap: 2px;
+  background: var(--petrol-lighter);
+  border: 1px solid var(--petrol-light);
+  border-radius: var(--r-m);
+  padding: 2px;
 }
+
+.toggleBtn {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: calc(var(--r-m) - 2px);
+  border: none;
+  background: none;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all 0.12s;
+  font-family: var(--font);
+}
+
+.toggleActive {
+  background: var(--petrol);
+  color: white;
+  font-weight: 700;
+}
+
+.trendBody {
+  padding: 12px 16px 8px;
+}
+
+/* Interactive legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  padding: 10px 4px 4px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: var(--r-s);
+  transition: background 0.1s;
+  font-family: var(--font);
+}
+.legendItem:hover { background: var(--petrol-lighter); }
+
+.legendHidden { opacity: 0.4; }
+.legendHidden .legendLabel { text-decoration: line-through; }
+
+.legendDot {
+  width: 16px; height: 3px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legendLabel { white-space: nowrap; }

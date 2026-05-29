@@ -1,0 +1,151 @@
+/* Interreg CE — Themes homepage */
+
+.page {
+  position: relative;
+  flex: 1;
+  padding: 32px 40px 28px;
+  overflow: hidden;
+}
+
+/* ── Cooperation visual background (punto 4) ── */
+/* Placeholder: sarà rimpiazzato da img quando il file viene caricato */
+.cooperationBg {
+  position: absolute;
+  top: 0; right: -40px;
+  width: 68%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+  opacity: 0.09;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Header ── */
+.header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 36px;
+  max-width: 700px;
+}
+
+.title {
+  font-family: var(--font-head);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.titleSep {
+  color: var(--petrol-bright);
+  font-weight: 300;
+  margin: 0 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-3);
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+/* ── Grid: 4 colonne × 2 righe ── */
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;   /* tutte le righe uguale altezza */
+  gap: 14px;
+}
+
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* ── Card ── */
+.card {
+  display: flex;
+  flex-direction: column;          /* icona sopra, testo sotto */
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--petrol-lighter);
+  border: 1px solid var(--petrol-light);
+  border-radius: var(--r-l);
+  padding: 24px 22px 20px;
+  min-height: 130px;
+  transition: all 0.18s ease;
+  position: relative;
+}
+
+.cardActive {
+  cursor: pointer;
+}
+
+.cardActive:hover {
+  background: var(--petrol-light);
+  border-color: var(--petrol-bright);
+  box-shadow: var(--shadow-m);
+  transform: translateY(-2px);
+}
+
+.cardActive:hover .iconWrap circle:first-child {
+  fill: var(--petrol-dark);
+}
+
+.cardDisabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ── Icon ── */
+.iconWrap {
+  flex-shrink: 0;
+  color: var(--petrol);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.18s;
+}
+
+/* ── Text ── */
+.info { flex: 1; min-width: 0; }
+
+.name {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.stats {
+  font-size: 11px;
+  color: var(--text-3);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dot { color: var(--petrol-light); }
+
+.statTncoop    { color: var(--priority-connected); font-weight: 600; }
+.statAdditional { color: var(--priority-governance); font-weight: 600; }
+
+.comingSoonLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}

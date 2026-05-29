@@ -24,12 +24,15 @@ export default function Sidebar({ state }) {
 
   return (
     <aside className={styles.sidebar}>
+
+      {/* Interreg CE logo */}
       <div className={styles.logoArea}>
-        <div className={styles.logoMark}>OE</div>
-        <div>
-          <div className={styles.logoName}>Interreg CENTRAL EUROPE</div>
-          <div className={styles.logoSub}>Dashboard</div>
-        </div>
+        <img
+          src={`${import.meta.env.BASE_URL}Interreg_Logo.svg`}
+          alt="Interreg CENTRAL EUROPE — Co-funded by the European Union"
+          className={styles.logo}
+        />
+        <div className={styles.dashboardLabel}>TNCOOP Dashboard</div>
       </div>
 
       <div className={styles.divider} />
@@ -43,10 +46,10 @@ export default function Sidebar({ state }) {
           value={years.indexOf(selectedYear)}
           onChange={e => setSelectedYear(years[+e.target.value])} />
         <div className={styles.yearBounds}>
-          <span>{years[0]}</span><span>{years[years.length-1]}</span>
+          <span>{years[0]}</span><span>{years[years.length - 1]}</span>
         </div>
 
-        <div className={styles.filterLabel} style={{marginTop:18}}>Countries</div>
+        <div className={styles.filterLabel} style={{ marginTop: 18 }}>Countries</div>
         <div className={styles.pillList}>
           {countries.map(c => {
             const on = activeCountries.includes(c.code)
@@ -66,7 +69,7 @@ export default function Sidebar({ state }) {
           Select all
         </button>
 
-        <div className={styles.filterLabel} style={{marginTop:18}}>
+        <div className={styles.filterLabel} style={{ marginTop: 18 }}>
           Focus regions
           {focusRegions.length > 0 && (
             <button className={styles.clearBtn} onClick={clearRegions}>
@@ -75,7 +78,7 @@ export default function Sidebar({ state }) {
           )}
         </div>
         <div className={styles.regionList}>
-          {[...filtered].sort((a,b) => a.name.localeCompare(b.name)).map(r => {
+          {[...filtered].sort((a, b) => a.name.localeCompare(b.name)).map(r => {
             const on = focusRegions.includes(r.id)
             return (
               <button key={r.id}
@@ -95,7 +98,7 @@ export default function Sidebar({ state }) {
 
       <div className={styles.spacer} />
       <div className={styles.sourceNote}>
-        Source: Eurostat · lfst_r_lfu3rt<br/>
+        Source: Eurostat · lfst_r_lfu3rt<br />
         NUTS 2 · Annual 2015–2024
       </div>
     </aside>
